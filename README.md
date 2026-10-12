@@ -1,4 +1,4 @@
-# Hidrocarbo
+# Hidrocarburo
 
 Juego educativo para aprender a nombrar hidrocarburos (alcanos, alquenos, alquinos, cicloalcanos y aromáticos).
 
