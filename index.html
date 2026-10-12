@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hidrocarbo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="masthead">
+      <h1>Hidrocarbo</h1>
+      <p>Nombra el hidrocarburo a partir de su estructura.</p>
+    </header>
+
+    <!-- Pantalla de inicio -->
+    <section id="start" class="screen">
+      <p>Verás la estructura de esqueleto de un hidrocarburo y cuatro nombres posibles. Cada vértice y cada extremo de línea es un carbono; los hidrógenos no se dibujan. Son 20 preguntas y cada acierto suma 10 puntos.</p>
+      <p class="note">Atajos: teclas 1 a 4 para responder.</p>
+      <button id="startBtn" class="btn" type="button">Empezar</button>
+    </section>
+
+    <!-- Pantalla de juego -->
+    <section id="game" class="screen" hidden>
+      <div class="progress">
+        <ol id="track" class="track" aria-hidden="true"></ol>
+        <p class="progress-text">
+          <span id="counter"></span>
+          <span><strong id="score">0</strong> puntos</span>
+        </p>
+      </div>
+
+      <div class="question">
+        <figure id="structure" class="structure">
+          <svg viewBox="0 0 360 170" role="img" aria-label="Estructura de esqueleto de un hidrocarburo">
+            <g id="drawing"></g>
+          </svg>
+          <figcaption id="clue"></figcaption>
+          <div id="toast" class="toast" aria-hidden="true"></div>
+        </figure>
+
+        <div class="answers">
+          <h2>¿Cómo se llama?</h2>
+          <div id="options" class="options"></div>
+          <div id="feedback" class="feedback" role="status"></div>
+          <button id="next" class="btn" type="button" hidden>Siguiente pregunta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pantalla final -->
+    <section id="end" class="screen" hidden>
+      <h2>Resultado</h2>
+      <p id="result"></p>
+      <p id="review" class="note"></p>
+      <button id="restartBtn" class="btn" type="button">Jugar otra vez</button>
+    </section>
+  </main>
+
+  <div id="celebration" class="celebration" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
