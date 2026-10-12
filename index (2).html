@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hidrocarbo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg" id="bg" aria-hidden="true"></div>
+<header class="bar">
+  <h1>Hidrocarbo</h1>
+  <nav><button class="tab on" data-tab="learn">Aprender</button><button class="tab" data-tab="play">Jugar</button></nav>
+</header>
+<main>
+<section id="learn">
+  <p class="lead">Un hidrocarburo solo tiene carbono e hidrógeno. Su nombre sale de dos partes: un prefijo que dice cuántos carbonos tiene y una terminación que dice qué tipo de enlaces hay. En los dibujos, cada vértice y cada extremo es un carbono y los hidrógenos no se dibujan.</p>
+  <h2>Prefijos</h2>
+  <ul class="prefixes" id="prefixes"></ul>
+  <h2>Cinco familias</h2>
+  <div class="cards" id="fams"></div>
+</section>
+
+<section id="play" hidden>
+  <div id="intro" class="panel">
+    <h2>Reto de nomenclatura</h2>
+    <ul>
+      <li>Son 5 preguntas. En cada una verás la estructura ya dibujada y eliges su nombre.</li>
+      <li>Cada acierto suma 10 puntos; con racha de 3 o más suma 15. La pista cuesta 5 puntos.</li>
+      <li>Tu nota es sobre 5,0: cada acierto vale 1,0.</li>
+      <li>Al final verás las respuestas correctas de todas las preguntas.</li>
+    </ul>
+    <p class="note">Si dudas, empieza por la pestaña Aprender. Atajos: teclas 1 a 5.</p>
+    <button class="btn" id="startBtn">Empezar</button>
+  </div>
+
+  <div id="game" hidden>
+    <div class="hud">
+      <span class="chip" id="count">Pregunta 1 de 5</span>
+      <span class="chip" id="streak">Racha 0</span>
+      <span class="chip"><strong id="score">0</strong> puntos</span>
+    </div>
+    <ol class="track" id="track" aria-hidden="true"></ol>
+    <div class="play">
+      <figure class="stage" id="stage" style="margin:0">
+        <svg viewBox="0 0 360 200" role="img" aria-label="Estructura de un hidrocarburo con sus carbonos numerados"><g id="g"></g></svg>
+        <figcaption id="clue"></figcaption>
+        <div class="toast" id="toast" aria-hidden="true"></div>
+      </figure>
+      <div>
+        <h2 id="q"></h2>
+        <div class="options" id="opts"></div>
+        <div class="row"><button class="btn ghost" id="hintBtn">Pista (−5)</button><button class="btn" id="next" hidden>Siguiente</button></div>
+        <div class="fb" id="fb" role="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="end" class="panel" hidden>
+    <h2 id="endTitle"></h2>
+    <p class="grade" id="grade"></p>
+    <p id="endText"></p>
+    <h3>Respuestas correctas</h3>
+    <div class="answers" id="answers"></div>
+    <p class="sign" id="sign">Te felicita<br><b>@ El profe Harold</b></p>
+    <button class="btn" id="again">Jugar otra vez</button>
+    <button class="btn ghost" id="toLearn" hidden>Repasar en Aprender</button>
+  </div>
+</section>
+</main>
+<div class="fx" id="fx" aria-hidden="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
